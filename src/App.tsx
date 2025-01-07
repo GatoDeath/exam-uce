@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PrincipalPage from "./components/PrincipalPage";
 import ToDoList from "./components/ToDoList";
 import FechApi from "./components/FechApi";
+import Calculator from "./components/Calculator";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/dashboard" element={<PrincipalPage />} />
           <Route path="/todo" element={<ToDoList />} />
           <Route path="/fechapi" element={<FechApi />} />
+          <Route path="/calculator" element={<Calculator />} />
         </Routes>
       </Router>
     </AuthProvides>

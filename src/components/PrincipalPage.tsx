@@ -81,7 +81,7 @@ export default function PrincipalPage() {
                 Herramienta para realizar cálculos matemáticos básicos
               </p>
               <button
-                onClick={() => navigate("/fechapi")}
+                onClick={() => navigate("/calculator")}
                 className="w-full px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-green-50 transition-colors duration-150"
               >
                 Ir a Calculadora
