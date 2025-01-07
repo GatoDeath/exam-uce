@@ -74,6 +74,19 @@ export default function PrincipalPage() {
                 Ir a API Explorer
               </button>
             </div>
+            {/* Calculator */}
+            <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-6 text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-lg font-semibold mb-2">Calculadora</h3>
+              <p className="text-green-100 mb-4">
+                Herramienta para realizar cálculos matemáticos básicos
+              </p>
+              <button
+                onClick={() => navigate("/fechapi")}
+                className="w-full px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-green-50 transition-colors duration-150"
+              >
+                Ir a Calculadora
+              </button>
+            </div>
           </div>
         </div>
       </div>
