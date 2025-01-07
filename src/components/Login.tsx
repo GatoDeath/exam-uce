@@ -19,7 +19,7 @@ export default function Login() {
 
   useEffect(() => {
     if (state === "login") {
-      navigate("/dashboard");
+      navigate("/main");
     }
   }, [state, navigate]);
 
@@ -40,9 +40,7 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm text-gray-700 mb-1">
-              Email
-            </label>
+            <label className="block text-sm text-gray-700 mb-1">Email</label>
             <input
               type="email"
               value={email}

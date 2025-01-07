@@ -25,7 +25,7 @@ export const useAuthContext = () => useContext(AuthContext);
 export const AuthProvides = ({ children }: { children: React.ReactNode }) => {
   const [state, setState] = useState<statesOfLogin>(statesOfLogin.checking);
 
-  // Verificar el estado inicial solo una vez
+  // Verify initial status
   useEffect(() => {
     const savedState = localStorage.getItem("authState");
     setState(

@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<PrincipalPage />} />
+          <Route path="/main" element={<PrincipalPage />} />
           <Route path="/todo" element={<ToDoList />} />
           <Route path="/fechapi" element={<FechApi />} />
           <Route path="/calculator" element={<Calculator />} />

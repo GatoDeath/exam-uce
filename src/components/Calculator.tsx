@@ -64,12 +64,12 @@ export default function Calculator() {
           return;
       }
 
-      // Verificar si el resultado es infinito o NaN
+      // verify if result is infinite or NaN
       if (!Number.isFinite(result) || Number.isNaN(result)) {
         throw new Error("Resultado inválido");
       }
 
-      // Limitar decimales a 8 para evitar números muy largos
+      // Limit decimal to 8
       const formattedResult = parseFloat(result.toFixed(8)).toString();
       setDisplay(formattedResult);
       setEquation(`${previousNumber} ${operation} ${current} = `);
@@ -77,7 +77,6 @@ export default function Calculator() {
       setPreviousNumber(null);
       setNewNumber(true);
       setError("");
-
     } catch (err) {
       setError(err instanceof Error ? err.message : "Error en el cálculo");
       setDisplay("0");
@@ -104,7 +103,11 @@ export default function Calculator() {
     }
   };
 
-  const CalcButton: React.FC<CalcButtonProps> = ({ children, onClick, className = "" }) => (
+  const CalcButton: React.FC<CalcButtonProps> = ({
+    children,
+    onClick,
+    className = "",
+  }) => (
     <button
       onClick={onClick}
       className={`p-4 text-xl font-semibold rounded-lg transition-colors duration-150 
@@ -116,13 +119,13 @@ export default function Calculator() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header con navegación */}
+      {/* Header with nav */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gray-900">Calculadora</h1>
             <button
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/main")}
               className="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-150"
             >
               <svg
@@ -166,10 +169,7 @@ export default function Calculator() {
           {/* Keypad */}
           <div className="grid grid-cols-4 gap-1 p-2 bg-gray-100">
             {/* First row */}
-            <CalcButton
-              onClick={handleClear}
-              className="bg-red-500 text-white"
-            >
+            <CalcButton onClick={handleClear} className="bg-red-500 text-white">
               C
             </CalcButton>
             <CalcButton
@@ -192,22 +192,13 @@ export default function Calculator() {
             </CalcButton>
 
             {/* Numbers and operations */}
-            <CalcButton
-              onClick={() => handleNumber("7")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("7")} className="bg-white">
               7
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("8")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("8")} className="bg-white">
               8
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("9")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("9")} className="bg-white">
               9
             </CalcButton>
             <CalcButton
@@ -217,22 +208,13 @@ export default function Calculator() {
               +
             </CalcButton>
 
-            <CalcButton
-              onClick={() => handleNumber("4")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("4")} className="bg-white">
               4
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("5")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("5")} className="bg-white">
               5
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("6")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("6")} className="bg-white">
               6
             </CalcButton>
             <CalcButton
@@ -242,22 +224,13 @@ export default function Calculator() {
               =
             </CalcButton>
 
-            <CalcButton
-              onClick={() => handleNumber("1")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("1")} className="bg-white">
               1
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("2")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("2")} className="bg-white">
               2
             </CalcButton>
-            <CalcButton
-              onClick={() => handleNumber("3")}
-              className="bg-white"
-            >
+            <CalcButton onClick={() => handleNumber("3")} className="bg-white">
               3
             </CalcButton>
 
@@ -267,10 +240,7 @@ export default function Calculator() {
             >
               0
             </CalcButton>
-            <CalcButton
-              onClick={handleDecimal}
-              className="bg-white"
-            >
+            <CalcButton onClick={handleDecimal} className="bg-white">
               .
             </CalcButton>
           </div>

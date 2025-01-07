@@ -15,13 +15,13 @@ export default function FechApi() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header con navegación */}
+      {/* Header with nav */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gray-900">Product List</h1>
             <button
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/main")}
               className="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors duration-150"
             >
               <svg
@@ -41,8 +41,8 @@ export default function FechApi() {
               Volver al Dashboard
             </button>
           </div>
-          
-          {/* Barra de búsqueda */}
+
+          {/* search bar*/}
           <div className="mt-6 relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg
@@ -69,12 +69,12 @@ export default function FechApi() {
         </div>
       </div>
 
-      {/* Lista de productos */}
+      {/* list of products */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {filteredProducts.map((product) => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="aspect-square w-full overflow-hidden rounded-t-lg bg-gray-200">
@@ -103,7 +103,7 @@ export default function FechApi() {
             </div>
           ))}
         </div>
-        
+
         {/* Mensaje cuando no hay resultados */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
